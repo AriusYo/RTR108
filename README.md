@@ -1,1 +1,2 @@
-# RTR108
+# RTR108_2020
+Datormācība (speckurss) - elektroniskā klade
