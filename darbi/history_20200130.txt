@@ -1,0 +1,41 @@
+    1  VirtualBox --startvm XP
+    2  quartus
+    3  git clone https://github.com/AriusYo/RTR108/tree/master
+    4  git clone https://github.com/AriusYo/RTR108
+    5  cd RTR108/
+    6  nano git-upload 
+    7  gcc git-upload 
+    8  nano git-upload 
+    9  ls -l
+   10  chmod 744 git-upload 
+   11  ls
+   12  nano README.md 
+   13  ./git-upload 20200130_12_57
+   14  mkdir darbi
+   15  cd darbi/
+   16  python
+   17  ipython
+   18  nano python_test.py
+   19  python python_test.py
+   20  nano python_test.py
+   21  python python_test.py
+   22  python --version
+   23  cp python_test.py python_tests_auto_exe.py
+   24  nano python_tests_auto_exe.py 
+   25  ls -l
+   26  ls -l usr/bin/python
+   27  ls -l /usr/bin/python
+   28  ls -l
+   29  chmod 744 python_tests_auto_exe.py 
+   30  mv python_tests_auto_exe.py python_tests_auto_exe 
+   31  ls -l
+   32  ./python_tests_auto_exe 
+   33  idle &
+   34  ls -l
+   35  python -m http.server 8000
+   36  nano get_lost.html
+   37  python -m http.server 8000
+   38  mv get_lost.html index.html
+   39  python -m http.server 8000
+   40  history
+   41  history > history_20200130.txt
