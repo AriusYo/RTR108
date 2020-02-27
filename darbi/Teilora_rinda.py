@@ -1,6 +1,6 @@
-import math
+from math import cos
 x = float(input("Lietotāj, ievadiet x vērtību:"))
-y = math.cos(x*x)
+y = cos(x*x)
 print("y=cos(%g)=%1.3f" %(x*x,y))
 
 a = pow(-1,0)*pow(x,0)/(1.)
