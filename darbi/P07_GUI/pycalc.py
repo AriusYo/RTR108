@@ -41,8 +41,8 @@ class PyCalcUi(QMainWindow):
         """View initializer."""
         super().__init__()
         # Set some main window's properties
-        self.setWindowTitle("Calculator in Python")#PyCalc
-        self.setFixedSize(300, 400)#235*235
+        self.setWindowTitle("PyCalc")#PyCalc
+        self.setFixedSize(235, 235)#235*235
         # Set the central widget and the general layout
         self.generalLayout = QVBoxLayout()
         self._centralWidget = QWidget(self)
@@ -90,26 +90,26 @@ class PyCalcUi(QMainWindow):
             "+": (3, 3),
             "=": (3, 4),
         }
-        self.button000 = {}
-        buttonsLayout0 = QGridLayout()
-        button000 = {
-            "000": (4, 0),
-            }
-        for btnText, pos in button000.items():
-            self.button000[btnText] = QPushButton(btnText)
-            self.button000[btnText].setFixedSize(80, 40)
-            buttonsLayout0.addWidget(self.button000[btnText],pos[0],pos[1])
-        self.generalLayout.addLayout(buttonsLayout0)
+        #self.button000 = {}
+        #buttonsLayout0 = QGridLayout()
+        #button000 = {
+        #    "000": (4, 0),
+        #    }
+        #for btnText, pos in button000.items():
+        #    self.button000[btnText] = QPushButton(btnText)
+        #    self.button000[btnText].setFixedSize(80, 40)
+        #    buttonsLayout0.addWidget(self.button000[btnText],pos[0],pos[1])
+        #self.generalLayout.addLayout(buttonsLayout0)
         # Create the buttons and add them to the grid layout
         for btnText, pos in buttons.items():
             self.buttons[btnText] = QPushButton(btnText)
             self.buttons[btnText].setFixedSize(40, 40)
-            #if(btnText == ("00")):
-            #    self.buttons[btnText].setFixedSize(80, 40)
-            if(btnText == ("C")):
-                palette = QPalette()
-                palette.setColor(QPalette.Button, Qt.red)
-                self.buttons[btnText].setPalette(palette)
+            #if(btnText == ("0")):
+            #    self.buttons[btnText].setFixedSize(85, 40)
+            #if(btnText == ("C")):
+            #    palette = QPalette()
+            #    palette.setColor(QPalette.Button, Qt.red)
+            #    self.buttons[btnText].setPalette(palette)
             buttonsLayout.addWidget(self.buttons[btnText], pos[0], pos[1])
         # Add buttonsLayout to the general layout
         self.generalLayout.addLayout(buttonsLayout)
@@ -168,8 +168,8 @@ class PyCalcCtrl:
         for btnText, btn in self._view.buttons.items():
             if btnText not in {"=", "C"}:
                 btn.clicked.connect(partial(self._buildExpression, btnText))
-        for btnText, btn in self._view.button000.items():
-            btn.clicked.connect(partial(self._buildExpression, "yeet"))
+        #for btnText, btn in self._view.button000.items():
+        #    btn.clicked.connect(partial(self._buildExpression, "yeet"))
         self._view.buttons["="].clicked.connect(self._calculateResult)
         self._view.display.returnPressed.connect(self._calculateResult)
         self._view.buttons["C"].clicked.connect(self._view.clearDisplay)
